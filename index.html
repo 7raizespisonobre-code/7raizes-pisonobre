@@ -4,116 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>7 Raízes — Piso Nobre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #0b0b0b; color: #f5f5f5; line-height: 1.6; }
+    body { background-color: #0b0b0b; color: #ffffff; font-family: 'Montserrat', 'HelveticaNeue', sans-serif; }
     
-    /* Topo */
-    .top-bar { background-color: #121212; color: #d4af37; text-align: center; padding: 8px; font-size: 11px; letter-spacing: 2px; border-bottom: 1px solid #1a1a1a; text-transform: uppercase; }
-    
-    /* Hero Principal */
-    .hero { text-align: center; padding: 50px 20px 30px 20px; max-width: 800px; margin: 0 auto; }
-    .logo-subtitle-top { font-size: 10px; color: #d4af37; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-    .logo-title { font-size: 34px; font-weight: bold; color: #d4af37; letter-spacing: 4px; margin-bottom: 2px; }
-    .logo-subtitle { font-size: 11px; color: #777; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 25px; }
-    
-    .main-title { font-size: 26px; margin-bottom: 20px; color: #fff; font-weight: 300; }
-    .main-title span { color: #d4af37; font-weight: bold; }
-    
-    /* Caixa Dourada de Destaque */
-    .box-destaque { background: #141210; border: 1px solid #c5832b; padding: 25px 20px; border-radius: 4px; margin: 20px auto 25px auto; max-width: 550px; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
-    .box-destaque p { color: #dcdcdc; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.8; }
-    
-    /* Botões */
-    .btn-gold { display: inline-block; background-color: #c5832b; color: #fff; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 3px; text-transform: uppercase; font-size: 13px; letter-spacing: 1.5px; box-shadow: 0 4px 15px rgba(197, 131, 43, 0.3); margin-bottom: 15px; }
-    
-    .btn-outline { display: inline-block; background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 3px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; margin-bottom: 30px; }
-
-    /* Seções e Trabalhos (Estilo Antigo) */
-    .section { padding: 40px 20px; max-width: 800px; margin: 0 auto; text-align: center; border-top: 1px solid #161616; }
-    .section-title { font-size: 18px; color: #d4af37; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px; }
-    
-    .portfolio-item { background: #111; border: 1px solid #222; padding: 18px; margin-bottom: 15px; text-align: left; border-left: 3px solid #c5832b; }
-    .portfolio-item h3 { color: #fff; font-size: 15px; margin-bottom: 5px; }
-    .portfolio-item p { color: #888; font-size: 12px; }
-
-    /* Contato */
-    .contact-section { background: #121212; padding: 35px 20px; text-align: center; border-top: 1px solid #1a1a1a; }
-    .contact-label { font-size: 10px; color: #888; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; }
-    .phone { font-size: 22px; color: #d4af37; font-weight: bold; margin-bottom: 5px; letter-spacing: 1px; }
-    .region { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* Rodapé */
-    footer { text-align: center; padding: 25px; color: #444; font-size: 11px; background: #080808; }
-
-    /* WhatsApp Flutuante */
-    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); z-index: 1000; }
+    /* Botão Flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #ffffff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    Restauracao de Pisos de Alto Padrão
+<div class="7raizes-fullwidth-wrapper" style="position:relative;width:100%;max-width:100%;background-color:#0b0b0b;color:#ffffff;font-family:'Montserrat','HelveticaNeue',sans-serif;padding:0">
+
+  <!-- TOPO DESTAQUE -->
+  <div style="background-color:#000000;width:100%;text-align:center;padding:8px 0">
+    <p style="margin:0;font-size:11px;letter-spacing:2px;color:#B87333;font-weight:700">RESTAURAÇÃO DE PISOS DE ALTO PADRÃO</p>
   </div>
 
-  <section class="hero">
-    <div class="logo-title">7 RAÍZES</div>
-    <div class="logo-subtitle">Piso Nobre</div>
-
-    <h1 class="main-title">Sua casa de alto padrão merece um <span>piso impecável</span>.</h1>
-
-    <div class="box-destaque">
-      <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira. Projetos em São Paulo.</p>
+  <!-- CABEÇALHO / NAVEGAÇÃO -->
+  <div style="display:flex;flex-direction:column;align-items:center;padding:25px 20px;background-color:#070707;width:100%;position:relative;z-index:10;text-align:center">
+    <div style="color:#ffffff;font-weight:700;letter-spacing:4px;font-size:22px;margin-bottom:5px">7 RAÍZES</div>
+    <div style="color:#B87333;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;font-weight:600">Piso Nobre</div>
+    <div style="display:flex;gap:20px;font-size:13px;color:#ffffff;letter-spacing:1px;font-weight:500">
+      <span style="color:#B87333;font-weight:700">INÍCIO</span>
+      <a href="#portfolio" style="color:#ffffff;text-decoration:none">PORTFÓLIO</a>
     </div>
+  </div>
 
-    <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" class="btn-gold">
-      Solicitar Avaliação
-    </a>
-    
-    <br>
-    <a href="#trabalhos" class="btn-outline">Ver Nossos Trabalhos</a>
-  </section>
-
-  <section id="trabalhos" class="section">
-    <h2 class="section-title">Destaques da Semana</h2>
-    
-    <div class="portfolio-item">
-      <h3>Revitalização de Deck</h3>
-      <p>Tratamento especializado para áreas externas com proteção contra intempéries.</p>
+  <!-- HERO / BANNER PRINCIPAL -->
+  <div style="position:relative;background-image:linear-gradient(rgba(0,0,0,0.85),rgba(11,11,11,0.95)),url('https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/image_editor_output_image-1473584918-17811223281298051906522021438490.png');background-size:cover;background-position:center;width:100%;padding:40px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+    <div style="margin-bottom:25px;display:flex;justify-content:center;width:100%">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/image_editor_output_image-1473584918-17811223281298051906522021438490.png" alt="Logo 7 Raízes" style="width: 150px;height: auto;margin: 0 auto">
     </div>
-    
-    <div class="portfolio-item">
-      <h3>Restauração de Assoalho Claro</h3>
-      <p>Raspagem sem pó e acabamento de alta resistência.</p>
-    </div>
-    
-    <div class="portfolio-item">
-      <h3>Piso de Alto Padrão Geométrico</h3>
-      <p>Recuperação de paginações clássicas e tacos nobres.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">A História por trás da 7 Raízes</h2>
-    <p style="color: #999; font-size: 13px; line-height: 1.7; text-align: left; padding: 0 5px;">
-      A 7 Raízes nasceu da união entre a tradição artesanal e a busca incessante pela perfeição. Trabalhamos exclusivamente com a restauração, revitalização e proteção de madeiras nobres e decks, devolvendo o brilho e a elegância que o seu imóvel merece.
+    <h1 style="font-size:28px;color:#ffffff;font-weight:600;line-height:1.3;margin:0 auto 18px auto;width:100%;max-width:340px;letter-spacing:-0.5px;text-align:center">
+      Sua casa de alto padrão merece um <span style="color:#B87333;font-weight:700">piso impecável</span>.
+    </h1>
+    <p style="font-size:15px;color:#ffffff;max-width:320px;margin:0 auto 35px auto;line-height:1.6;font-weight:400;text-align:center">
+      Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira. Projetos em São Paulo.
     </p>
-  </section>
-
-  <div class="contact-section">
-    <div class="contact-label">Fale Conosco Agora</div>
-    <div class="phone">(11) 97020-0771</div>
-    <div class="region">São Paulo e Região Metropolitana</div>
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;width:100%">
+      <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="background-color: #B87333;color: #ffffff;text-decoration: none;padding: 16px 0;font-weight: 700;font-size: 13px;letter-spacing: 1.5px;width: 260px;text-transform: uppercase;box-shadow: 0 4px 20px rgba(184,115,51,0.4);border-radius: 2px;text-align: center;display: block">SOLICITAR AVALIAÇÃO</a>  
+      <a href="#portfolio" style="border: 1px solid #ffffff;color: #ffffff;text-decoration: none;padding: 15px 0;font-weight: 600;font-size: 13px;letter-spacing: 1.5px;width: 260px;text-transform: uppercase;background-color: rgba(0,0,0,0.4);border-radius: 2px;text-align: center;display: block">VER NOSSOS TRABALHOS</a>
+    </div>
   </div>
 
-  <footer>
-    <p>© 2026 7 Raízes Pisos e Obras. Todos os direitos reservados.</p>
-  </footer>
+  <!-- DESTAQUES DA SEMANA -->
+  <div style="padding:40px 15px;background-color:#070707;width:100%;text-align:center">
+    <span style="color:#B87333;font-size:11px;font-weight:700;letter-spacing:3px;display:block;margin-bottom:25px;text-transform:uppercase">Destaques da Semana</span>
+    <div style="margin-bottom:20px;padding:8px;background-color:#111111;margin-left:auto;margin-right:auto;max-width:95%">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/1000237705.jpg" alt="Revitalização de Deck" style="width: 100%;height: auto;display: block">
+    </div>
+    <div style="margin-bottom:20px;padding:8px;background-color:#111111;margin-left:auto;margin-right:auto;max-width:95%">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/1000237683.jpg" alt="Restauração de Assoalho Claro" style="width: 100%;height: auto;display: block">
+    </div>
+    <div style="margin-bottom:10px;padding:8px;background-color:#111111;margin-left:auto;margin-right:auto;max-width:95%">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/1000237677.jpg" alt="Piso de Alto Padrão Geométrico" style="width: 100%;height: auto;display: block">
+    </div>
+  </div>
 
-  <!-- Botão Flutuante do WhatsApp igual ao modelo desejado -->
-  <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    💬
-  </a>
+  <!-- CONTATO RÁPIDO -->
+  <div style="background-color:#070707;padding:35px 20px;display:flex;flex-direction:column;gap:20px;width:100%;text-align:center">
+    <div>
+      <span style="color:#e0e0e0;font-size:11px;display:block;letter-spacing:2px;margin-bottom:6px;font-weight:600">📞 FALE CONOSCO AGORA</span>  
+      <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="color: #B87333;font-weight: 800;font-size: 20px;text-decoration: none;letter-spacing: 0.5px">(11) 97020-0771</a>
+    </div>
+    <div style="width:40px;height:1px;background-color:rgba(184,115,51,0.4);margin:0 auto"></div>
+    <div> 
+      <span style="color:#e0e0e0;font-size:11px;display:block;letter-spacing:2px;margin-bottom:6px;font-weight:600">📍 ATENDIMENTO ESPECIALIZADO</span>  
+      <span style="color:#ffffff;font-weight:600;font-size:15px;letter-spacing:0.5px">São Paulo e Região</span>
+    </div>
+  </div>
+
+  <!-- SOBRE A EMPRESA -->
+  <div style="padding:50px 20px;background-color:#111111;width:100%">
+    <span style="color:#B87333;font-size:12px;font-weight:700;letter-spacing:3px;display:block;margin-bottom:10px;text-transform:uppercase">SOBRE A EMPRESA</span>
+    <h2 style="font-size:26px;color:#ffffff;margin:0 0 18px 0;font-weight:500;line-height:1.3">A história por trás da 7 Raízes</h2>
+    <p style="color:#ffffff;font-size:15px;line-height:1.7;margin-bottom:30px;font-weight:400">A 7 Raízes nasceu da união entre a tradição artesanal e a busca incessante pela perfeição. Trabalhamos exclusivamente com a restauração, revitalização e proteção de madeiras nobres e decks, devolvendo o brilho e a elegância que o seu imóvel merece.</p>
+    <div style="padding:4px;background-color:#070707">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/image_editor_output_image-404396263-1781122421376662495147514865103.png" alt="Restauração de Piso de Madeira Nobre" style="width: 100%;height: auto;display: block">
+    </div>
+  </div>
+
+  <!-- PORTFÓLIO E ESPAÇO PARA FOTOS -->
+  <div id="portfolio" style="padding:50px 20px;background-color:#0b0b0b;width:100%">
+    <span style="color:#B87333;font-size:12px;font-weight:700;letter-spacing:3px;display:block;margin-bottom:5px;text-transform:uppercase;text-align:center">PORTFÓLIO</span>
+    <h2 style="font-size:26px;color:#ffffff;margin:0 0 12px 0;font-weight:500;text-align:center">Projetos Realizados</h2>
+    <p style="color:#e0e0e0;font-size:14px;margin:0 auto 40px auto;max-width:280px;font-weight:400;line-height:1.5;text-align:center">Trabalhos reais entregues com o selo de perfeição 7 Raízes.</p>
+    
+    <div style="margin-bottom:35px;background-color:#111111;padding:10px">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/image_editor_output_image1448839088-17811224166346294721474936307137.png" alt="Piso de Taco Restaurado" style="width: 100%;height: auto;display: block;margin-bottom: 15px">  
+      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">RESTAURAÇÃO DE TACO TRADICIONAL</span>
+      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Acabamento em Verniz de Alta Resistência</span>
+    </div>
+    
+    <div style="margin-bottom:20px;background-color:#111111;padding:10px">
+      <img src="https://7raizespisonobrex.wordpress.com/wp-content/uploads/2026/06/image_editor_output_image-144760824-17811224255767590831475355655554.png" alt="Assoalho de Madeira Nobre" style="width: 100%;height: auto;display: block;margin-bottom: 15px">  
+      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">REPOLIMENTO DE ASSOALHO NOBRE</span>
+      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Remoção de Riscos e Nivelamento</span>
+    </div>
+
+    <!-- ESPAÇO PRONTO PARA ADICIONAR NOVAS FOTOS -->
+    <!-- Copie e cole o bloco abaixo para cada foto nova que quiser adicionar -->
+    <div style="margin-bottom:20px;background-color:#111111;padding:10px">
+      <img src="LINK_DA_SUA_FOTO_AQUI.jpg" alt="Novo Projeto" style="width: 100%;height: auto;display: block;margin-bottom: 15px">  
+      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">NOME DO NOVO SERVIÇO</span>
+      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Descrição Curta do Trabalho Realizado</span>
+    </div>
+  </div>
+
+  <!-- CHAMADA FINAL -->
+  <div style="background-color:#070707;width:100%;text-align:center;padding:40px 20px">
+    <h3 style="color:#ffffff;font-size:22px;font-weight:400;margin:0 0 8px 0;letter-spacing:-0.5px">Seu piso tem uma história.</h3>
+    <p style="color:#B87333;font-size:22px;font-weight:800;margin:0 0 18px 0;text-transform:uppercase;letter-spacing:1px">Nós ajudamos a continuar ela.</p>
+    <p style="color:#ffffff;font-size:14px;max-width:290px;margin:0 auto 35px auto;line-height:1.6;font-weight:400">Entre em contato hoje mesmo e agende uma visita técnica com nossos especialistas.</p>
+    <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="background-color: #B87333;color: #ffffff;text-decoration: none;padding: 16px 35px;font-weight: 700;display: inline-block;font-size: 13px;letter-spacing: 1px;text-transform: uppercase;box-shadow: 0 5px 15px rgba(184,115,51,0.5);border-radius: 2px">💬 FALAR COM UM ESPECIALISTA</a>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="background-color:#000000;padding:30px 20px;font-size:11px;color:#888888;border-top:1px solid #111111;width:100%;text-align:center">
+    <p style="margin:0 0 6px 0;letter-spacing:1px;color:#aaaaaa">© 2026 7 RAÍZES - TODOS OS DIREITOS RESERVADOS</p>
+    <p style="margin:0;color:#666666;font-weight:500">Design Exclusivo de Alto Padrão</p>
+  </div>
+
+</div>
+
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+<a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  💬
+</a>
 
 </body>
 </html>
+
