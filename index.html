@@ -1,47 +1,430 @@
-<!-- GALERIA AUTOMÁTICA DE FOTOS -->
-<section id="servicos" class="portfolio">
-    <span style="color: var(--accent-brown); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; display: block; margin-bottom: 0.5rem;">Galeria de Trabalhos</span>
-    <h2>Serviços Executados</h2>
-    <p>Projetos reais de restauração, calafetação e aplicação de verniz.</p>
-    
-    <!-- O JavaScript vai inserir todas as fotos do GitHub aqui dentro -->
-    <div id="galeria-fotos" class="grid-fotos">
-        <p style="color: var(--text-muted); grid-column: 1/-1;">Carregando fotos do portfólio...</p>
-    </div>
-</section>
-
-<script>
-    async function carregarGaleriaGitHub() {
-        // Busca os arquivos direto da pasta do repositório no GitHub
-        const usuario = '7raizespisonobre-code';
-        const repositorio = '7raizes-pisonobre';
-        const galeriaContainer = document.getElementById('galeria-fotos');
-
-        try {
-            const resposta = await fetch(`https://api.github.com/repos/${usuario}/${repositorio}/contents/`);
-            const arquivos = await resposta.json();
-
-            // Filtra apenas imagens e exclui fotos de fundo/prints se necessário
-            const fotos = arquivos.filter(arquivo => 
-                arquivo.name.match(/\.(jpg|jpeg|png)$/i)
-            );
-
-            galeriaContainer.innerHTML = ''; // Limpa a mensagem de carregamento
-
-            fotos.forEach(foto => {
-                const cardFoto = document.createElement('div');
-                cardFoto.className = 'foto-container';
-                cardFoto.innerHTML = `
-                    <div class="foto-img" style="background-image: url('./${foto.name}');"></div>
-                    <span class="watermark">aplicadorasena</span>
-                `;
-                galeriaContainer.appendChild(cardFoto);
-            });
-        } catch (erro) {
-            galeriaContainer.innerHTML = '<p style="color: var(--text-muted);">Erro ao carregar as imagens do portfólio.</p>';
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Raízes - Restauração de Pisos Nobres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0807;
+            --bg-card: #14100d;
+            --accent-brown: #c06d20;
+            --accent-hover: #e07d2e;
+            --accent-low: #3a2210;
+            --text-light: #f7f4f0;
+            --text-muted: #a69e9a;
+            --header-height: 80px;
         }
-    }
 
-    // Executa a busca ao abrir o site
-    carregarGaleriaGitHub();
-</script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(10, 8, 7, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(192, 109, 32, 0.2);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+
+        nav a:hover {
+            color: var(--accent-brown);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--header-height) + 40px) 20px 60px;
+            background-image: linear-gradient(rgba(10, 8, 7, 0.82), rgba(10, 8, 7, 0.92)), 
+                              url('./20231119_172908.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-logo-img {
+            width: 130px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .hero-sub {
+            color: var(--accent-brown);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-brown);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent-brown);
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-low);
+        }
+
+        /* INFO BAR */
+        .info-bar {
+            background-color: var(--bg-card);
+            border-y: 1px solid rgba(192, 109, 32, 0.15);
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-item span {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent-brown);
+            letter-spacing: 1px;
+        }
+
+        /* GALERIA / PORTFÓLIO AUTOMÁTICO */
+        .portfolio-section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--accent-brown);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-section p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .grid-fotos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .foto-container {
+            position: relative;
+            width: 100%;
+            padding-top: 80%; /* Proporção das fotos */
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(192, 109, 32, 0.25);
+            background-color: var(--bg-card);
+        }
+
+        .foto-img {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .foto-container:hover .foto-img {
+            transform: scale(1.06);
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 12px;
+            background: rgba(10, 8, 7, 0.8);
+            color: rgba(247, 244, 240, 0.9);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: lowercase;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(192, 109, 32, 0.4);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 80px 5%;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+            text-align: center;
+            border-top: 1px solid rgba(192, 109, 32, 0.15);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #050403;
+            padding: 40px 5% 20px;
+            border-top: 1px solid rgba(192, 109, 32, 0.1);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 2000;
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <span style="color: var(--accent-brown);">7</span> RAÍZES
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#trabalhos">Trabalhos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>7 RAÍZES</h1>
+        <div class="hero-sub">Restauração de Pisos Nobres</div>
+        <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank">Solicitar Avaliação</a>
+            <a href="#trabalhos" class="btn btn-outline">Ver Nossos Trabalhos</a>
+        </div>
+    </section>
+
+    <div class="info-bar">
+        <div class="info-item">
+            <div>
+                <span>Fale Conosco Agora</span>
+                <strong>(11) 99999-9999</strong>
+            </div>
+        </div>
+        <div class="info-item">
+            <div>
+                <span>Atendimento Especializado</span>
+                <strong>São Paulo e Região</strong>
+            </div>
+        </div>
+        <a href="https://wa.me/5511999999999" class="btn btn-outline" target="_blank">Falar com Especialista</a>
+    </div>
+
+    <section id="trabalhos" class="portfolio-section">
+        <span class="section-tag">Portfólio</span>
+        <h2>Projetos Realizados</h2>
+        <p>Veja alguns dos nossos trabalhos e transforme seu ambiente.</p>
+
+        <div id="galeria-fotos" class="grid-fotos">
+            <p style="color: var(--text-muted); grid-column: 1/-1;">Carregando fotos do portfólio...</p>
+        </div>
+    </section>
+
+    <section id="contato" class="cta-section">
+        <h2>Seu piso tem uma história.<br><span style="color: var(--accent-brown);">Nós ajudamos a continuar ela.</span></h2>
+        <p>Solicite uma avaliação e descubra o potencial do seu piso.</p>
+        <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank">Fale Conosco Agora</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 7 Raízes - Restauração de Pisos Nobres. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank" title="Contato via WhatsApp">
+        &#128222;
+    </a>
+
+    <script>
+        async function carregarGaleriaGitHub() {
+            const usuario = '7raizespisonobre-code';
+            const repositorio = '7raizes-pisonobre';
+            const galeriaContainer = document.getElementById('galeria-fotos');
+
+            try {
+                const resposta = await fetch(`https://api.github.com/repos/${usuario}/${repositorio}/contents/`);
+                const arquivos = await resposta.json();
+
+                // Filtra apenas imagens reais do serviço e ignora prints do celular
+                const fotos = arquivos.filter(arquivo => {
+                    const nome = arquivo.name.toLowerCase();
+                    const ehImagem = nome.match(/\.(jpg|jpeg|png|webp|heif)$/i);
+                    const ehCaptura = nome.includes('captura') || nome.includes('screenshot') || nome.startsWith('10002');
+                    return ehImagem && !ehCaptura;
+                });
+
+                if (fotos.length === 0) {
+                    galeriaContainer.innerHTML = '<p style="color: var(--text-muted); grid-column: 1/-1;">Nenhuma imagem encontrada.</p>';
+                    return;
+                }
+
+                galeriaContainer.innerHTML = ''; // Limpa a mensagem de carregamento
+
+                fotos.forEach(foto => {
+                    const card = document.createElement('div');
+                    card.className = 'foto-container';
+                    card.innerHTML = `
+                        <div class="foto-img" style="background-image: url('./${foto.name}');"></div>
+                        <span class="watermark">aplicadorasena</span>
+                    `;
+                    galeriaContainer.appendChild(card);
+                });
+
+            } catch (erro) {
+                galeriaContainer.innerHTML = '<p style="color: var(--text-muted); grid-column: 1/-1;">Erro ao carregar as imagens do portfólio.</p>';
+            }
+        }
+
+        carregarGaleriaGitHub();
+    </script>
+</body>
+</html>
+
