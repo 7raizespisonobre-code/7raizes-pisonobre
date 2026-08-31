@@ -1,177 +1,329 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Raízes — Piso Nobre | Restauração de Tacos e Assoalhos em São Paulo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #0b0b0b; color: #ffffff; font-family: 'Montserrat', 'HelveticaNeue', sans-serif; }
-    
-    /* Botão Flutuante do WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #ffffff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      z-index: 9999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Raízes - Restauração de Pisos Nobres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ================= VARIÁVEIS DE COR ================= */
+        :root {
+            --bg-dark: #111111;
+            --bg-section: #1a1a1a;
+            --accent: #b46b38; /* Tom de cobre/madeira do seu layout */
+            --accent-hover: #8f532a;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
+        }
+
+        /* ================= RESET BÁSICO ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* ================= NAVEGAÇÃO ================= */
+        header {
+            position: absolute; /* Para ficar sobre a imagem */
+            top: 0; width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            gap: 3rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+        nav a:hover { color: var(--accent); }
+
+        /* ================= HERO SECTION (PARALLAX) ================= */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* EFEITO PARALLAX AQUI */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            padding: 0 20px;
+        }
+        .hero-logo {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: #ddd;
+        }
+        .botoes-hero { display: flex; gap: 1.5rem; }
+        
+        /* ================= BOTÕES ================= */
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        .btn-solid {
+            background-color: var(--accent);
+            color: #fff;
+            border: 1px solid var(--accent);
+        }
+        .btn-solid:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+        .btn-outline {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+        .btn-outline:hover { background-color: #fff; color: var(--bg-dark); }
+
+        /* ================= BARRA DE CONTATO ================= */
+        .contact-bar {
+            background-color: #151515;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            border-bottom: 1px solid #333;
+            flex-wrap: wrap;
+        }
+        .contact-item { display: flex; align-items: center; gap: 1rem; }
+        .contact-item span { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;}
+        .contact-item p { font-size: 1.2rem; margin: 0; }
+
+        /* ================= SOBRE NÓS ================= */
+        .sobre {
+            padding: 6rem 10%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background-color: var(--bg-dark);
+        }
+        .sobre-texto { flex: 1; }
+        .tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .sobre h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+        .sobre p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+        .sobre-img {
+            flex: 1;
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #333;
+        }
+
+        /* ================= PORTFÓLIO ================= */
+        .portfolio {
+            padding: 6rem 10%;
+            background-color: var(--bg-section);
+            text-align: center;
+        }
+        .portfolio h2 { font-size: 3rem; margin-bottom: 1rem; }
+        .portfolio > p { color: var(--text-muted); margin-bottom: 4rem; }
+        .grid-fotos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .foto-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+        .foto-item:hover { transform: scale(1.02); }
+        
+        /* Imagens de placeholder para o portfólio */
+        .foto-1 { background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop'); }
+        .foto-2 { background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=600&auto=format&fit=crop'); }
+        .foto-3 { background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop'); }
+        .foto-4 { background-image: url('https://images.unsplash.com/photo-1622372738946-62e02505feb3?q=80&w=600&auto=format&fit=crop'); }
+
+        /* ================= CTA FINAL ================= */
+        .cta-final {
+            padding: 5rem 10%;
+            background-color: var(--bg-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        .cta-final h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .cta-final h2 span { color: var(--accent); }
+        .cta-final p { color: var(--text-muted); }
+
+        /* ================= FOOTER ================= */
+        footer {
+            padding: 3rem 10%;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        /* ================= WHATSAPP FLUTUANTE ================= */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #20b858; }
+
+        /* ================= RESPONSIVO ================= */
+        @media (max-width: 900px) {
+            .sobre, .cta-final { flex-direction: column; text-align: center; gap: 2rem; }
+            .botoes-hero, .contact-bar { flex-direction: column; text-align: center; }
+            nav ul { flex-direction: column; gap: 1rem; text-align: center; background: rgba(0,0,0,0.9); padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="7raizes-fullwidth-wrapper" style="position:relative;width:100%;max-width:100%;background-color:#0b0b0b;color:#ffffff;font-family:'Montserrat','HelveticaNeue',sans-serif;padding:0">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Início</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Trabalhos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- TOPO DESTAQUE -->
-  <div style="background-color:#000000;width:100%;text-align:center;padding:8px 0">
-    <p style="margin:0;font-size:11px;letter-spacing:2px;color:#B87333;font-weight:700">REFERÊNCIA EM RESTAURAÇÃO E APLICAÇÃO DE PISOS DE MADEIRA</p>
-  </div>
+    <section class="hero">
+        <h1 class="hero-logo serif">7 RAÍZES</h1>
+        <h2 class="hero-subtitle">Restauração de Pisos Nobres</h2>
+        <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira.</p>
+        <div class="botoes-hero">
+            <a href="#" class="btn btn-solid">Solicitar Avaliação</a>
+            <a href="#" class="btn btn-outline">Ver Nossos Trabalhos</a>
+        </div>
+    </section>
 
-  <!-- CABEÇALHO / NAVEGAÇÃO -->
-  <div style="display:flex;flex-direction:column;align-items:center;padding:25px 20px;background-color:#070707;width:100%;position:relative;z-index:10;text-align:center">
-    <div style="color:#ffffff;font-weight:700;letter-spacing:4px;font-size:22px;margin-bottom:5px">7 RAÍZES</div>
-    <div style="color:#B87333;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;font-weight:600">Piso Nobre</div>
-    <div style="display:flex;gap:20px;font-size:13px;color:#ffffff;letter-spacing:1px;font-weight:500">
-      <span style="color:#B87333;font-weight:700">INÍCIO</span>
-      <a href="#diferenciais" style="color:#ffffff;text-decoration:none">DIFERENCIAIS</a>
-      <a href="#portfolio" style="color:#ffffff;text-decoration:none">PORTFÓLIO</a>
-    </div>
-  </div>
+    <section class="contact-bar">
+        <div class="contact-item">
+            <div>
+                <span>Fale Conosco Agora</span>
+                <p class="serif">(11) 99999-9999</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div>
+                <span>Atendimento Especializado</span>
+                <p class="serif">São Paulo e Região</p>
+            </div>
+        </div>
+        <a href="#" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Falar com Especialista</a>
+    </section>
 
-  <!-- HERO / BANNER PRINCIPAL -->
-  <div style="position:relative;background-image:linear-gradient(rgba(0,0,0,0.85),rgba(11,11,11,0.95)),url('1000007028.jpg');background-size:cover;background-position:center;width:100%;padding:40px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-    <h1 style="font-size:28px;color:#ffffff;font-weight:600;line-height:1.3;margin:0 auto 18px auto;width:100%;max-width:340px;letter-spacing:-0.5px;text-align:center">
-      Renove a beleza do seu piso de madeira com <span style="color:#B87333;font-weight:700">padrão de excelência</span>.
-    </h1>
-    <p style="font-size:15px;color:#ffffff;max-width:320px;margin:0 auto 35px auto;line-height:1.6;font-weight:400;text-align:center">
-      Especialistas em raspagem sem pó, reposição de tacos, restauração de assoalhos e acabamento com vernizes importados de alta durabilidade.
-    </p>
-    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;width:100%">
-      <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="background-color: #B87333;color: #ffffff;text-decoration: none;padding: 16px 0;font-weight: 700;font-size: 13px;letter-spacing: 1.5px;width: 260px;text-transform: uppercase;box-shadow: 0 4px 20px rgba(184,115,51,0.4);border-radius: 2px;text-align: center;display: block">SOLICITAR AVALIAÇÃO</a>  
-      <a href="#portfolio" style="border: 1px solid #ffffff;color: #ffffff;text-decoration: none;padding: 15px 0;font-weight: 600;font-size: 13px;letter-spacing: 1.5px;width: 260px;text-transform: uppercase;background-color: rgba(0,0,0,0.4);border-radius: 2px;text-align: center;display: block">VER NOSSOS TRABALHOS</a>
-    </div>
-  </div>
+    <section class="sobre">
+        <div class="sobre-texto">
+            <span class="tag">Sobre a Empresa</span>
+            <h2>A história por trás<br>da 7 Raízes</h2>
+            <p>A 7 Raízes nasceu da união entre tradição e inovação. Trabalhamos com restauração de pisos de madeira, valorizando cada detalhe e preservando a essência dos ambientes.</p>
+            <a href="#" class="btn btn-outline">Saiba Mais</a>
+        </div>
+        <div class="sobre-img"></div>
+    </section>
 
-  <!-- SEÇÃO DE DIFERENCIAIS TÉCNICOS -->
-  <div id="diferenciais" style="padding:45px 20px;background-color:#070707;width:100%;text-align:center">
-    <span style="color:#B87333;font-size:11px;font-weight:700;letter-spacing:3px;display:block;margin-bottom:10px;text-transform:uppercase">RIGOR TÉCNICO</span>
-    <h2 style="font-size:24px;color:#ffffff;margin-bottom:30px;font-weight:500">Nossos Diferenciais</h2>
-    
-    <div style="background-color:#111111;padding:20px;margin-bottom:15px;text-align:left;border-left:3px solid #B87333">
-      <h3 style="color:#B87333;font-size:15px;margin-bottom:6px;font-weight:700">⚙️ Raspagem Sem Pó</h3>
-      <p style="color:#cccccc;font-size:13px;line-height:1.5;margin:0">Utilizamos maquinário profissional equipado com sistema de aspiração de alta potência, protegendo o seu ambiente residencial ou comercial contra resíduos e poeira.</p>
-    </div>
+    <section class="portfolio">
+        <span class="tag">Portfólio</span>
+        <h2>Projetos realizados</h2>
+        <p>Veja alguns dos nossos trabalhos e transforme seu ambiente.</p>
+        
+        <div class="grid-fotos">
+            <div class="foto-item foto-1"></div>
+            <div class="foto-item foto-2"></div>
+            <div class="foto-item foto-3"></div>
+            <div class="foto-item foto-4"></div>
+        </div>
+        <a href="#" class="btn btn-outline">Ver todas as fotos</a>
+    </section>
 
-    <div style="background-color:#111111;padding:20px;margin-bottom:15px;text-align:left;border-left:3px solid #B87333">
-      <h3 style="color:#B87333;font-size:15px;margin-bottom:6px;font-weight:700">🛠️ Reposição de Tacos e Calafetação</h3>
-      <p style="color:#cccccc;font-size:13px;line-height:1.5;margin:0">Especializados na recomposição de peças danificadas ou ausentes (como pisos espinha de peixe e geométricos), associada à calafetação elástica em PU que evita trincas e esfarelamento.</p>
-    </div>
+    <section class="cta-final">
+        <div>
+            <h2>Seu piso tem uma história.<br><span>Nós ajudamos a continuar ela.</span></h2>
+            <p>Solicite uma avaliação e descubra o potencial do seu piso.</p>
+        </div>
+        <a href="#" class="btn btn-solid">Fale Conosco Agora</a>
+    </section>
 
-    <div style="background-color:#111111;padding:20px;margin-bottom:5px;text-align:left;border-left:3px solid #B87333">
-      <h3 style="color:#B87333;font-size:15px;margin-bottom:6px;font-weight:700">🛡️ Vernizes Importados (Linha Bona)</h3>
-      <p style="color:#cccccc;font-size:13px;line-height:1.5;margin:0">Aplicação de produtos de alto padrão reconhecidos mundialmente (como Bona Mega), garantindo durabilidade superior, proteção contra raios UV e um acabamento impecável.</p>
-    </div>
-  </div>
+    <footer>
+        <div class="footer-logo serif" style="font-size: 1.5rem; color: #fff;">
+            7 RAÍZES
+        </div>
+        <div>
+            São Paulo e Região
+        </div>
+        <div style="text-align: right;">
+            (11) 99999-9999<br>
+            contato@7raizes.com.br
+        </div>
+    </footer>
 
-  <!-- PORTFÓLIO COMPLETO COM TODAS AS FOTOS REAIS -->
-  <div id="portfolio" style="padding:50px 20px;background-color:#0b0b0b;width:100%">
-    <span style="color:#B87333;font-size:12px;font-weight:700;letter-spacing:3px;display:block;margin-bottom:5px;text-transform:uppercase;text-align:center">PORTFÓLIO</span>
-    <h2 style="font-size:26px;color:#ffffff;margin:0 0 12px 0;font-weight:500;text-align:center">Obras Realizadas</h2>
-    <p style="color:#e0e0e0;font-size:14px;margin:0 auto 40px auto;max-width:300px;font-weight:400;line-height:1.5;text-align:center">Veja o antes, o durante e o acabamento final executado por nossa equipe.</p>
-    
-    <!-- ITEM 1: Reposição e Processo em Tacos (Espinha de Peixe) -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_718.jpg" alt="Recuperação de Tacos com Peças Faltantes" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">REPOSIÇÃO E CORREÇÃO DE TACOS</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Reconstrução rigorosa de áreas danificadas mantendo o desenho original.</span>
-    </div>
-
-    <!-- ITEM 2: Processo de Lixamento Geométrico -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_798.jpg" alt="Lixamento de Piso Geométrico" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">LIXAMENTO PROFISSIONAL SEM PÓ</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Preparo minucioso da superfície antes da aplicação dos vernizes.</span>
-    </div>
-
-    <!-- ITEM 3: Uso de Verniz Bona Mega -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_732.jpg" alt="Acabamento com Verniz Bona Mega" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">PRODUTOS DE ALTO PADRÃO (BONA)</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Utilização de vernizes importados para máxima proteção e brilho nobre.</span>
-    </div>
-
-    <!-- ITEM 4: Piso Geométrico Pronto -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_800.jpg" alt="Piso de Taco Geométrico Restaurado" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">TACO GEOMÉTRICO FINALIZADO</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">O brilho e a tonalidade natural da madeira totalmente renovados.</span>
-    </div>
-
-    <!-- ITEM 5: Assoalho Comercial/Residencial Grande -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_1001.jpg" alt="Grande Assoalho de Madeira Brilhante" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">GRANDES ÁREAS E ASSOALHOS</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Nivelamento perfeito e acabamento uniforme de alto padrão.</span>
-    </div>
-
-    <!-- ITEM 6: Escada de Madeira -->
-    <div style="margin-bottom:30px;background-color:#111111;padding:10px">
-      <img src="f091ef44-0588-4350-bafb-c55e068107b5-1_all_939.jpg" alt="Restauração de Escada de Madeira" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">RESTAURAÇÃO DE ESCADAS</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Tratamento minucioso em degraus e estruturas de madeira nobre.</span>
-    </div>
-
-    <!-- ITEM 7: Deck Externo -->
-    <div style="margin-bottom:20px;background-color:#111111;padding:10px">
-      <img src="1000007028.jpg" alt="Revitalização de Deck" style="width: 100%;height: auto;display: block;margin-bottom: 12px">  
-      <span style="color:#B87333;font-size:13px;font-weight:700;letter-spacing:1px;display:block;padding:0 5px">DECKS EXTERNOS</span>
-      <span style="color:#ffffff;font-size:12px;display:block;margin-top:4px;font-weight:400;padding:0 5px">Proteção especial contra intempéries e exposição solar na área da piscina.</span>
-    </div>
-  </div>
-
-  <!-- CONTATO RÁPIDO E REGIÃO DE ATENDIMENTO -->
-  <div style="background-color:#070707;padding:35px 20px;display:flex;flex-direction:column;gap:20px;width:100%;text-align:center">
-    <div>
-      <span style="color:#e0e0e0;font-size:11px;display:block;letter-spacing:2px;margin-bottom:6px;font-weight:600">📞 FALE COM UM ESPECIALISTA</span>  
-      <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="color: #B87333;font-weight: 800;font-size: 20px;text-decoration: none;letter-spacing: 0.5px">(11) 97020-0771</a>
-    </div>
-    <div style="width:40px;height:1px;background-color:rgba(184,115,51,0.4);margin:0 auto"></div>
-    <div> 
-      <span style="color:#e0e0e0;font-size:11px;display:block;letter-spacing:2px;margin-bottom:6px;font-weight:600">📍 ÁREAS DE ATENDIMENTO</span>  
-      <span style="color:#ffffff;font-weight:500;font-size:13px;letter-spacing:0.5px;line-height:1.5;display:block;max-width:300px;margin:0 auto">São Paulo Capital, Jardins, Morumbi, Alphaville, Moema, Pinheiros e Região</span>
-    </div>
-  </div>
-
-  <!-- CHAMADA FINAL -->
-  <div style="background-color:#0b0b0b;width:100%;text-align:center;padding:40px 20px">
-    <h3 style="color:#ffffff;font-size:22px;font-weight:400;margin:0 0 8px 0;letter-spacing:-0.5px">Seu piso tem história.</h3>
-    <p style="color:#B87333;font-size:20px;font-weight:800;margin:0 0 18px 0;text-transform:uppercase;letter-spacing:1px">Nós devolvemos a vida a ele.</p>
-    <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" style="background-color: #B87333;color: #ffffff;text-decoration: none;padding: 16px 35px;font-weight: 700;display: inline-block;font-size: 13px;letter-spacing: 1px;text-transform: uppercase;box-shadow: 0 5px 15px rgba(184,115,51,0.5);border-radius: 2px">💬 SOLICITAR ORÇAMENTO VIA WHATSAPP</a>
-  </div>
-
-  <!-- RODAPÉ -->
-  <div style="background-color:#000000;padding:30px 20px;font-size:11px;color:#888888;border-top:1px solid #111111;width:100%;text-align:center">
-    <p style="margin:0 0 6px 0;letter-spacing:1px;color:#aaaaaa">© 2026 7 RAÍZES - TODOS OS DIREITOS RESERVADOS</p>
-    <p style="margin:0;color:#666666;font-weight:500">Pisos Nobres & Revestimentos de Madeira</p>
-  </div>
-
-</div>
-
-<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-<a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20técnica." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-  💬
-</a>
+    <a href="https://wa.me/5511999999999?text=Bem-vindo.%20Como%20podemos%20ajudar%20a%20projetar%20o%20seu%20ambiente%20hoje?" target="_blank" class="whatsapp-float">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
