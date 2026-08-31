@@ -102,12 +102,6 @@
             background-position: center;
         }
 
-        .hero-logo-img {
-            width: 130px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             letter-spacing: 4px;
@@ -170,7 +164,8 @@
         /* INFO BAR */
         .info-bar {
             background-color: var(--bg-card);
-            border-y: 1px solid rgba(192, 109, 32, 0.15);
+            border-top: 1px solid rgba(192, 109, 32, 0.15);
+            border-bottom: 1px solid rgba(192, 109, 32, 0.15);
             padding: 25px 5%;
             display: flex;
             justify-content: space-around;
@@ -193,7 +188,7 @@
             letter-spacing: 1px;
         }
 
-        /* GALERIA / PORTFÓLIO AUTOMÁTICO */
+        /* GALERIA AUTOMÁTICA */
         .portfolio-section {
             padding: 80px 5%;
             text-align: center;
@@ -229,7 +224,7 @@
         .foto-container {
             position: relative;
             width: 100%;
-            padding-top: 80%; /* Proporção das fotos */
+            padding-top: 80%;
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid rgba(192, 109, 32, 0.25);
@@ -406,7 +401,7 @@
                     return;
                 }
 
-                galeriaContainer.innerHTML = ''; // Limpa a mensagem de carregamento
+                galeriaContainer.innerHTML = '';
 
                 fotos.forEach(foto => {
                     const card = document.createElement('div');
@@ -427,4 +422,3 @@
     </script>
 </body>
 </html>
-
