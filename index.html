@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Raízes - Restauração de Pisos Nobres</title>
+    
+    <!-- SEO & Social Sharing -->
+    <title>7 Raízes | Restauração de Pisos Nobres e Tacos de Madeira</title>
+    <meta name="description" content="Especialistas em restauração de pisos de madeira, raspagem sem poeira, calafetação com massa PU e aplicação de vernizes nobres em São Paulo e região. Solcite uma avaliação!">
+    <meta name="keywords" content="restauração de pisos, raspagem de taco, bona, calafetação, piso de madeira, assoalho, raspagem sem poeira, são paulo">
+    
+    <!-- Open Graph (Preview no WhatsApp e Redes Sociais) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="7 Raízes - Restauração de Pisos Nobres">
+    <meta property="og:description" content="Tradição e precisão para devolver a beleza natural do seu piso de madeira com acabamento impecável.">
+    <meta property="og:image" content="./20231119_172908.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-dark: #0a0807;
@@ -172,12 +184,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            text-align: center;
         }
 
         .info-item span {
@@ -188,9 +195,10 @@
             letter-spacing: 1px;
         }
 
-        /* GALERIA AUTOMÁTICA */
-        .portfolio-section {
+        /* SEÇÃO DE SERVIÇOS */
+        .services-section {
             padding: 80px 5%;
+            background-color: var(--bg-dark);
             text-align: center;
         }
 
@@ -201,6 +209,46 @@
             letter-spacing: 3px;
             display: block;
             margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(192, 109, 32, 0.2);
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-brown);
+        }
+
+        .service-card h3 {
+            color: var(--text-light);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* GALERIA AUTOMÁTICA */
+        .portfolio-section {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: #0d0a08;
         }
 
         .portfolio-section h2 {
@@ -260,6 +308,45 @@
             border: 1px solid rgba(192, 109, 32, 0.4);
         }
 
+        /* DEPOIMENTOS */
+        .testimonials-section {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: var(--bg-dark);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(192, 109, 32, 0.15);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--accent-brown);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* CTA SECTION */
         .cta-section {
             padding: 80px 5%;
@@ -315,6 +402,7 @@
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="header-logo">
             <span style="color: var(--accent-brown);">7</span> RAÍZES
@@ -322,62 +410,119 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#trabalhos">Trabalhos</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#trabalhos">Portfólio</a></li>
+                <li><a href="#depoimentos">Avaliações</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section id="inicio" class="hero">
         <h1>7 RAÍZES</h1>
         <div class="hero-sub">Restauração de Pisos Nobres</div>
         <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira.</p>
         <div class="hero-buttons">
-            <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank">Solicitar Avaliação</a>
+            <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20para%20restaura%C3%A7%C3%A3o%20de%20piso." class="btn btn-primary" target="_blank">Solicitar Avaliação</a>
             <a href="#trabalhos" class="btn btn-outline">Ver Nossos Trabalhos</a>
         </div>
     </section>
 
+    <!-- INFO BAR -->
     <div class="info-bar">
         <div class="info-item">
-            <div>
-                <span>Fale Conosco Agora</span>
-                <strong>(11) 99999-9999</strong>
-            </div>
+            <span>Fale Conosco</span>
+            <strong>(11) 97020-0771</strong>
         </div>
         <div class="info-item">
-            <div>
-                <span>Atendimento Especializado</span>
-                <strong>São Paulo e Região</strong>
-            </div>
+            <span>E-mail Comercial</span>
+            <strong>7raizespisonobre@gmail.com</strong>
         </div>
-        <a href="https://wa.me/5511999999999" class="btn btn-outline" target="_blank">Falar com Especialista</a>
+        <div class="info-item">
+            <span>Atendimento</span>
+            <strong>São Paulo e Região</strong>
+        </div>
+        <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="btn btn-outline" target="_blank">Falar com Especialista</a>
     </div>
 
+    <!-- SEÇÃO DE SERVIÇOS (SEO) -->
+    <section id="servicos" class="services-section">
+        <span class="section-tag">Especialidades</span>
+        <h2>Nossos Serviços de Alto Padrão</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Técnicas modernas combinadas com acabamento artesanal para garantir a maior durabilidade do seu assoalho.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Raspagem sem Poeira</h3>
+                <p>Lixamento ecológico e progressivo com maquinário moderno equipado com sucção, reduzindo drasticamente a sujeira no ambiente.</p>
+            </div>
+            <div class="service-card">
+                <h3>Calafetação & Juntas</h3>
+                <p>Preenchimento e vedação de frestas entre as tábuas utilizando massa PU flexível de alta resistência que previne trincas futuras.</p>
+            </div>
+            <div class="service-card">
+                <h3>Aplicação de Vernizes Nobres</h3>
+                <p>Proteção com vernizes de alta performance (como Bona e Skane), oferecendo acabamentos fosco, acetinado ou brilhante.</p>
+            </div>
+            <div class="service-card">
+                <h3>Restauração de Tacos e Assoalhos</h3>
+                <p>Recuperação completa de tacos, parquetes e assoalhos antigos de madeira nobre, devolvendo a tonalidade original do piso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA AUTOMÁTICA -->
     <section id="trabalhos" class="portfolio-section">
         <span class="section-tag">Portfólio</span>
         <h2>Projetos Realizados</h2>
-        <p>Veja alguns dos nossos trabalhos e transforme seu ambiente.</p>
+        <p>Veja a qualidade dos acabamentos aplicados aos pisos dos nossos clientes.</p>
 
         <div id="galeria-fotos" class="grid-fotos">
             <p style="color: var(--text-muted); grid-column: 1/-1;">Carregando fotos do portfólio...</p>
         </div>
     </section>
 
-    <section id="contato" class="cta-section">
-        <h2>Seu piso tem uma história.<br><span style="color: var(--accent-brown);">Nós ajudamos a continuar ela.</span></h2>
-        <p>Solicite uma avaliação e descubra o potencial do seu piso.</p>
-        <a href="https://wa.me/5511999999999" class="btn btn-primary" target="_blank">Fale Conosco Agora</a>
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="testimonials-section">
+        <span class="section-tag">Depoimentos</span>
+        <h2>O que dizem nossos clientes</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"O piso do meu apartamento de taco antigo ficou como novo! Impressionante como quase não fez poeira na restauração."</p>
+                <div class="testimonial-author">— Sérgio A. (Jardins, SP)</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Trabalho de extrema precisão. A calafetação ficou perfeita e o acabamento acetinado valorizou muito nossa sala."</p>
+                <div class="testimonial-author">— Carla M. (Moema, SP)</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Atendimento impecável desde o orçamento. Pontuais e o resultado final no assoalho de ipê superou as expectativas."</p>
+                <div class="testimonial-author">— Roberto V. (Pinheiros, SP)</div>
+            </div>
+        </div>
     </section>
 
+    <!-- CTA -->
+    <section id="contato" class="cta-section">
+        <h2>Seu piso tem uma história.<br><span style="color: var(--accent-brown);">Nós ajudamos a continuar ela.</span></h2>
+        <p>Solicite uma avaliação e descubra o potencial do seu piso de madeira.</p>
+        <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">Fale Conosco Agora</a>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 7 Raízes - Restauração de Pisos Nobres. Todos os direitos reservados.</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; color: var(--text-muted);">Contato: 7raizespisonobre@gmail.com | (11) 97020-0771</p>
     </footer>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank" title="Contato via WhatsApp">
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20servi%C3%A7o." class="whatsapp-btn" target="_blank" title="Contato via WhatsApp">
         &#128222;
     </a>
 
+    <!-- SCRIPT DE BUSCA AUTOMÁTICA DO GITHUB -->
     <script>
         async function carregarGaleriaGitHub() {
             const usuario = '7raizespisonobre-code';
@@ -388,7 +533,6 @@
                 const resposta = await fetch(`https://api.github.com/repos/${usuario}/${repositorio}/contents/`);
                 const arquivos = await resposta.json();
 
-                // Filtra apenas imagens reais do serviço e ignora prints do celular
                 const fotos = arquivos.filter(arquivo => {
                     const nome = arquivo.name.toLowerCase();
                     const ehImagem = nome.match(/\.(jpg|jpeg|png|webp|heif)$/i);
