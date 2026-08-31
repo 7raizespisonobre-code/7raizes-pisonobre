@@ -1,419 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Raízes - Restauração de Pisos Nobres</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        /* ================= PALETA DE CORES E FUNDO DE PISO ================= */
-        :root {
-            --bg-dark: #0a0807;
-            --bg-card: #14100d;
-            --accent-brown: #c0682b; 
-            --accent-hover: #9e511e;
-            --accent-box: #b25e24;   
-            --text-light: #f7f4f0;
-            --text-muted: #b5a89e;
-            --header-height: 90px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-        /* ================= CABEÇALHO ================= */
-        header {
-            position: fixed;
-            top: 0; 
-            width: 100%;
-            height: var(--header-height);
-            background: rgba(10, 8, 7, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(192, 104, 43, 0.2);
-        }
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2.5rem;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            list-style: none;
-        }
-
-        nav a:hover { color: var(--accent-brown); }
-
-        /* ================= HERO (FUNDO COM TEXTURA ISOLADA DO PISO) ================= */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: calc(var(--header-height) + 3rem) 10% 6rem 10%;
-            /* Filtro escuro sobre a textura do piso de madeira maciça */
-            background-image: linear-gradient(rgba(10, 8, 7, 0.78), rgba(10, 8, 7, 0.88)), 
-                              url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .logo-emblem {
-            width: 95px;
-            height: 95px;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-title span { color: var(--accent-brown); }
-
-        .hero-subtitle {
-            font-size: 0.95rem;
-            letter-spacing: 4px;
-            color: var(--accent-brown);
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .highlight-box {
-            background-color: var(--accent-box);
-            padding: 2.2rem 2.8rem;
-            max-width: 680px;
-            margin-bottom: 2.5rem;
-            border-radius: 2px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .highlight-box p {
-            font-size: 1.05rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .botoes-hero { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-
-        /* ================= BOTÕES ================= */
-        .btn {
-            padding: 1.1rem 2.8rem;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 2px;
-            display: inline-block;
-        }
-
-        .btn-solid {
-            background-color: var(--accent-brown);
-            color: #fff;
-            border: 1px solid var(--accent-brown);
-        }
-
-        .btn-solid:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #fff;
-            border: 1px solid #ffffff;
-        }
-
-        .btn-outline:hover { background-color: #fff; color: var(--bg-dark); }
-
-        /* ================= BARRA DE CONTATO ================= */
-        .contact-bar {
-            background-color: #120e0b;
-            padding: 2.5rem 10%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid rgba(192, 104, 43, 0.2);
-            border-bottom: 1px solid rgba(192, 104, 43, 0.2);
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .contact-item span {
-            font-size: 0.75rem;
-            color: var(--accent-brown);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .contact-item p { font-size: 1.2rem; margin: 0; }
-
-        /* ================= PORTFÓLIO / FOTOS DE SERVIÇOS COM MARCA D'ÁGUA ================= */
-        .portfolio {
-            padding: 8rem 10%;
-            text-align: center;
-            background-color: var(--bg-card);
-            border-top: 1px solid rgba(192, 104, 43, 0.1);
-        }
-
-        .portfolio h2 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .portfolio > p { color: var(--text-muted); margin-bottom: 3.5rem; font-size: 1.1rem; }
-
-        .grid-fotos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3.5rem;
-        }
-
-        /* Container da Foto com Marca d'Água */
-        .foto-container {
-            position: relative;
-            height: 340px;
-            border: 1px solid rgba(192, 104, 43, 0.3);
-            overflow: hidden;
-            border-radius: 2px;
-        }
-
-        .foto-img {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.4s ease;
-        }
-
-        .foto-container:hover .foto-img {
-            transform: scale(1.05);
-        }
-
-        /* MARCA D'ÁGUA NO CANTO INFERIOR DIREITO DA FOTO */
-        .watermark {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.65);
-            color: rgba(255, 255, 255, 0.85);
-            padding: 4px 10px;
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
-            text-transform: lowercase;
-            border-radius: 2px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            pointer-events: none;
-            backdrop-filter: blur(2px);
-        }
-
-        /* Substitua pelas URLs das suas fotos hospedadas */
-        .foto-1 { background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=800&auto=format&fit=crop'); }
-        .foto-2 { background-image: url('https://images.unsplash.com/photo-1622372738946-62e02505feb3?q=80&w=800&auto=format&fit=crop'); }
-        .foto-3 { background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop'); }
-        .foto-4 { background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop'); }
-
-        /* ================= CHAMADA FINAL ================= */
-        .cta-final {
-            padding: 8rem 10%;
-            background-color: var(--bg-dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid rgba(192, 104, 43, 0.2);
-            gap: 3rem;
-        }
-
-        .cta-final h2 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
-        .cta-final h2 span { color: var(--accent-brown); }
-
-        /* ================= RODAPÉ ================= */
-        footer {
-            padding: 3rem 10%;
-            background-color: #050403;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(192, 104, 43, 0.1);
-        }
-
-        /* ================= WHATSAPP FLUTUANTE ================= */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 35px;
-            right: 35px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            z-index: 1000;
-        }
-
-        .whatsapp-float:hover { transform: scale(1.1); }
-
-        @media (max-width: 900px) {
-            header { justify-content: center; }
-            nav { display: none; }
-            .hero-title { font-size: 2.4rem; }
-            .cta-final, .contact-bar, footer { flex-direction: column; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- CABEÇALHO -->
-    <header>
-        <div class="header-logo">
-            <svg viewBox="0 0 100 100" width="30" height="30">
-                <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="none" stroke="#c0682b" stroke-width="6"/>
-                <path d="M 32 30 L 68 30 L 45 70" stroke="#c0682b" stroke-width="8" fill="none" stroke-linecap="round"/>
-                <path d="M 45 70 Q 32 82 22 84 M 45 70 Q 50 82 55 86 M 45 70 Q 60 78 70 82" stroke="#c0682b" stroke-width="4" fill="none"/>
-            </svg>
-            <span class="serif">7 RAÍZES</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- HERO COM FUNDO DE PISO DE MADEIRA -->
-    <section id="inicio" class="hero">
-        <svg class="logo-emblem" viewBox="0 0 100 100">
-            <polygon points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5" fill="#120e0b" stroke="#c0682b" stroke-width="4"/>
-            <path d="M 32 30 L 68 30 L 45 70" stroke="#c0682b" stroke-width="7" fill="none" stroke-linecap="round"/>
-            <path d="M 45 70 Q 32 82 22 84 M 45 70 Q 50 82 55 86 M 45 70 Q 60 78 70 82" stroke="#c0682b" stroke-width="3" fill="none"/>
-        </svg>
-
-        <h1 class="hero-title serif">7 RAÍZES</h1>
-        <h2 class="hero-subtitle">Restauração de Pisos Nobres</h2>
-        
-        <h2 style="font-size: 1.8rem; margin-bottom: 2rem; font-weight: 400;">
-            Sua casa de alto padrão merece um <span>piso impecável.</span>
-        </h2>
-
-        <div class="highlight-box">
-            <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira. Projetos em São Paulo.</p>
-        </div>
-
-        <div class="botoes-hero">
-            <a href="https://wa.me/5511970200771?text=Olá!%20Gostaria%20de%20solicitar%20uma%20avaliação%20para%20meu%20piso." target="_blank" class="btn btn-solid">Solicitar Avaliação</a>
-            <a href="#servicos" class="btn btn-outline">Ver Nossos Trabalhos</a>
-        </div>
-    </section>
-
-    <!-- BARRA DE CONTATO ATUALIZADA -->
-    <div class="contact-bar">
-        <div class="contact-item">
-            <span>WhatsApp / Telefone</span>
-            <p class="serif">(11) 97020-0771</p>
-        </div>
-        <div class="contact-item">
-            <span>E-mail Oficial</span>
-            <p class="serif">7raizespisonobre@gmail.com</p>
-        </div>
-        <a href="https://wa.me/5511970200771" target="_blank" class="btn btn-outline" style="border-color: var(--accent-brown); color: var(--accent-brown);">Falar no WhatsApp</a>
+<!-- GALERIA AUTOMÁTICA DE FOTOS -->
+<section id="servicos" class="portfolio">
+    <span style="color: var(--accent-brown); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; display: block; margin-bottom: 0.5rem;">Galeria de Trabalhos</span>
+    <h2>Serviços Executados</h2>
+    <p>Projetos reais de restauração, calafetação e aplicação de verniz.</p>
+    
+    <!-- O JavaScript vai inserir todas as fotos do GitHub aqui dentro -->
+    <div id="galeria-fotos" class="grid-fotos">
+        <p style="color: var(--text-muted); grid-column: 1/-1;">Carregando fotos do portfólio...</p>
     </div>
+</section>
 
-    <!-- GALERIA DE SERVIÇOS COM MARCA D'ÁGUA NAS FOTOS -->
-    <section id="servicos" class="portfolio">
-        <span style="color: var(--accent-brown); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; display: block; margin-bottom: 0.5rem;">Galeria de Trabalhos</span>
-        <h2>Serviços Executados</h2>
-        <p>Projetos reais de restauração, calafetação e aplicação de verniz em tacos, assoalhos e decks.</p>
-        
-        <div class="grid-fotos">
-            <!-- Foto 1 -->
-            <div class="foto-container">
-                <div class="foto-img foto-1"></div>
-                <span class="watermark">aplicadorasena</span>
-            </div>
-            <!-- Foto 2 -->
-            <div class="foto-container">
-                <div class="foto-img foto-2"></div>
-                <span class="watermark">aplicadorasena</span>
-            </div>
-            <!-- Foto 3 -->
-            <div class="foto-container">
-                <div class="foto-img foto-3"></div>
-                <span class="watermark">aplicadorasena</span>
-            </div>
-            <!-- Foto 4 -->
-            <div class="foto-container">
-                <div class="foto-img foto-4"></div>
-                <span class="watermark">aplicadorasena</span>
-            </div>
-        </div>
-    </section>
+<script>
+    async function carregarGaleriaGitHub() {
+        // Busca os arquivos direto da pasta do repositório no GitHub
+        const usuario = '7raizespisonobre-code';
+        const repositorio = '7raizes-pisonobre';
+        const galeriaContainer = document.getElementById('galeria-fotos');
 
-    <!-- CHAMADA FINAL PARA CONTATO -->
-    <section id="contato" class="cta-final">
-        <div>
-            <h2>Seu piso tem uma história.<br><span>Nós ajudamos a renová-la.</span></h2>
-            <p>Entre em contato diretamente para solicitar um orçamento técnico.</p>
-        </div>
-        <a href="https://wa.me/5511970200771?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="btn btn-solid">Chamar no WhatsApp</a>
-    </section>
+        try {
+            const resposta = await fetch(`https://api.github.com/repos/${usuario}/${repositorio}/contents/`);
+            const arquivos = await resposta.json();
 
-    <!-- RODAPÉ ATUALIZADO -->
-    <footer>
-        <div class="serif" style="font-size: 1.3rem; color: #fff;">
-            7 RAÍZES
-        </div>
-        <div>
-            São Paulo e Região
-        </div>
-        <div style="text-align: right;">
-            (11) 97020-0771<br>
-            7raizespisonobre@gmail.com
-        </div>
-    </footer>
+            // Filtra apenas imagens e exclui fotos de fundo/prints se necessário
+            const fotos = arquivos.filter(arquivo => 
+                arquivo.name.match(/\.(jpg|jpeg|png)$/i)
+            );
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <a href="https://wa.me/5511970200771?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="whatsapp-float">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-    </a>
+            galeriaContainer.innerHTML = ''; // Limpa a mensagem de carregamento
 
-</body>
-    </html>
+            fotos.forEach(foto => {
+                const cardFoto = document.createElement('div');
+                cardFoto.className = 'foto-container';
+                cardFoto.innerHTML = `
+                    <div class="foto-img" style="background-image: url('./${foto.name}');"></div>
+                    <span class="watermark">aplicadorasena</span>
+                `;
+                galeriaContainer.appendChild(cardFoto);
+            });
+        } catch (erro) {
+            galeriaContainer.innerHTML = '<p style="color: var(--text-muted);">Erro ao carregar as imagens do portfólio.</p>';
+        }
+    }
+
+    // Executa a busca ao abrir o site
+    carregarGaleriaGitHub();
+</script>
