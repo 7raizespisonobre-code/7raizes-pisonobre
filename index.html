@@ -54,10 +54,10 @@
 
     .logo span { color: var(--cobre-destaque); }
 
-    /* CAPA PRINCIPAL */
+    /* CAPA PRINCIPAL - USANDO SUA IMAGEM DO GITHUB */
     .hero {
       position: relative;
-      background: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      background: url('./piso-fundo.jpg') center/cover no-repeat;
       padding: 70px 20px 50px;
       text-align: center;
     }
@@ -65,7 +65,7 @@
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(20, 19, 18, 0.50) 0%, rgba(20, 19, 18, 0.90) 100%);
+      background: linear-gradient(180deg, rgba(20, 19, 18, 0.40) 0%, rgba(20, 19, 18, 0.88) 100%);
       z-index: 1;
     }
 
@@ -128,7 +128,7 @@
       color: var(--texto-claro);
     }
 
-    /* INFORMAÇÕES DE CONTATO E PRESTADOR (POSICIONADO APÓS O PRIMEIRO QUADRO) */
+    /* CONTATO E INSTAGRAM PARCEIRO */
     .top-info {
       background-color: #1A1816;
       padding: 20px;
@@ -219,7 +219,7 @@
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--border-card);
-      height: 220px;
+      height: 240px;
     }
 
     .portfolio-item img {
@@ -272,12 +272,11 @@
 </head>
 <body>
 
-  <!-- NAVEGAÇÃO -->
   <header>
     <div class="logo">7 <span>RAÍZES</span></div>
   </header>
 
-  <!-- 1º QUADRO: NOME, SLOGAN E BOTÕES DE AÇÃO -->
+  <!-- 1º QUADRO (COM A SUA FOTO piso-fundo.jpg NO FUNDO) -->
   <div class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -291,7 +290,7 @@
     </div>
   </div>
 
-  <!-- INFORMAÇÕES DE CONTATO E PARCERIA (LOGOS ABAIXO DO 1º QUADRO) -->
+  <!-- INFORMAÇÕES DE CONTATO E PARCERIA -->
   <div class="top-info">
     <div>Fale Conosco: <a href="tel:11970200771">(11) 97020-0771</a></div>
     <div>Instagram do Prestador Parceiro: <a href="https://instagram.com/aplicadora_sena_" target="_blank">@aplicadora_sena_</a></div>
@@ -324,7 +323,7 @@
     </div>
   </section>
 
-  <!-- PORTFÓLIO DE FOTOS -->
+  <!-- PORTFÓLIO COM SUAS FOTOS DO GITHUB -->
   <section id="portfolio">
     <div class="section-title">
       <span>Portfólio</span>
@@ -332,19 +331,16 @@
     </div>
     <div class="grid-portfolio">
       <div class="portfolio-item">
-        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto1.jpg) -->
-        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Restauração de Taco">
-        <div class="portfolio-caption">Restauração de Taco Antigo - Jardins</div>
+        <img src="./IMG-20250113-WA0051.jpg" alt="Restauração de Piso">
+        <div class="portfolio-caption">Restauração de Taco Antigo</div>
       </div>
       <div class="portfolio-item">
-        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto2.jpg) -->
-        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="Aplicação de Verniz">
-        <div class="portfolio-caption">Aplicação de Verniz Acetinado - Moema</div>
+        <img src="./20241010_090228.jpg" alt="Aplicação de Verniz">
+        <div class="portfolio-caption">Aplicação de Verniz Acetinado</div>
       </div>
       <div class="portfolio-item">
-        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto3.jpg) -->
-        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="Raspagem e Calafetação">
-        <div class="portfolio-caption">Raspagem e Calafetação - Pinheiros</div>
+        <img src="./20241107_092638.jpg" alt="Raspagem de Piso">
+        <div class="portfolio-caption">Raspagem e Calafetação</div>
       </div>
     </div>
   </section>
@@ -371,25 +367,23 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section style="text-align: center;">
     <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.7rem; margin-bottom: 8px;">Seu piso tem uma história.</h2>
     <p style="color: var(--cobre-destaque); font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Nós ajudamos a continuar ela.</p>
     <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20quero%20solicitar%20um%20or%C3%A7amento." class="btn btn-primary" style="display: inline-block; width: 100%; max-width: 300px;">Fale Conosco Agora</a>
   </section>
 
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
   <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20vim%20pelo%20site%20da%207%20Ra%C3%ADzes." class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32">
       <path d="M16 2a13 13 0 0 0-11.3 19.4L3 29l7.8-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.5c-.2-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4A3.8 3.8 0 0 0 8 12.3a6.6 6.6 0 0 0 1.4 3.5 15.2 15.2 0 0 0 5.8 5.1c2.4 1 2.9.8 3.4.8a2.9 2.9 0 0 0 1.9-1.3 2.4 2.4 0 0 0 .2-1.3c-.1-.2-.4-.3-.7-.5z"/>
     </svg>
   </a>
 
-  <!-- RODAPÉ -->
   <footer>
     <p>© 2026 7 Raízes - Restauração de Pisos Nobres. Todos os direitos reservados.</p>
     <p>Contato: 7raizespisonobre@gmail.com | (11) 97020-0771</p>
   </footer>
 
 </body>
-</html>
+  </html>
+  
