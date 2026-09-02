@@ -5,21 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>7 Raízes - Restauração de Pisos Nobres</title>
   
-  <!-- Fontes Modernas: Montserrat (Títulos) e Inter (Textos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* --- VARIÁVEIS DE CORES E ILUMINAÇÃO --- */
     :root {
-      --bg-escuro: #141312;         /* Fundo grafite profundo e aquecido */
-      --bg-card: #1E1C1A;           /* Cards iluminados com tom suave */
-      --border-card: #3D352E;       /* Borda sutil de contraste */
-      --texto-claro: #F5F5F7;       /* Branco nítido para leitura fácil */
-      --texto-suave: #D1D5DB;       /* Cinza claro para descrições */
-      --cobre-destaque: #E58A2B;    /* Cobre/Ouro elegante */
-      --cobre-hover: #C6721E;
+      --bg-escuro: #141312;
+      --bg-card: #1E1C1A;
+      --border-card: #3D352E;
+      --texto-claro: #F5F5F7;
+      --texto-suave: #D1D5DB;
+      --cobre-destaque: #E58A2B;
       --whatsapp: #25D366;
     }
 
@@ -28,7 +25,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      font-style: normal !important; /* Remove itálico excessivo */
+      font-style: normal !important;
     }
 
     body {
@@ -37,7 +34,6 @@
       line-height: 1.6;
     }
 
-    /* --- CABEÇALHO --- */
     header {
       background: rgba(20, 19, 18, 0.95);
       position: sticky;
@@ -45,14 +41,12 @@
       z-index: 100;
       padding: 15px 20px;
       border-bottom: 1px solid var(--border-card);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
 
     .logo {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: var(--texto-claro);
       letter-spacing: 2px;
@@ -60,15 +54,14 @@
 
     .logo span { color: var(--cobre-destaque); }
 
-    /* --- HERO / CAPA (PISO ILUMINADO) --- */
+    /* CAPA PRINCIPAL */
     .hero {
       position: relative;
       background: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      padding: 80px 20px 60px;
+      padding: 70px 20px 50px;
       text-align: center;
     }
 
-    /* Overlay mais leve (45%) para mostrar a beleza da madeira ao fundo */
     .hero-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -95,18 +88,17 @@
       color: var(--cobre-destaque);
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 2px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .hero p {
       color: var(--texto-suave);
-      font-size: 1rem;
+      font-size: 0.98rem;
       margin-bottom: 25px;
     }
 
-    /* --- BOTÕES --- */
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -123,7 +115,6 @@
       text-transform: uppercase;
       font-size: 0.85rem;
       letter-spacing: 1px;
-      transition: 0.3s;
       text-align: center;
     }
 
@@ -137,15 +128,16 @@
       color: var(--texto-claro);
     }
 
-    /* --- CONTATO RÁPIDO --- */
+    /* INFORMAÇÕES DE CONTATO E PRESTADOR (POSICIONADO APÓS O PRIMEIRO QUADRO) */
     .top-info {
       background-color: #1A1816;
       padding: 20px;
       text-align: center;
+      border-top: 1px solid var(--border-card);
       border-bottom: 1px solid var(--border-card);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       font-size: 0.9rem;
     }
 
@@ -155,9 +147,8 @@
       font-weight: 600;
     }
 
-    /* --- SEÇÕES EM GERAL --- */
     section {
-      padding: 50px 20px;
+      padding: 45px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -178,38 +169,45 @@
 
     .section-title h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       color: var(--texto-claro);
       margin-top: 5px;
     }
 
-    /* --- CARDS DE SERVIÇOS --- */
-    .grid-servicos {
+    .grid-servicos, .grid-depoimentos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
-    .card {
+    .card, .depoimento-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-card);
-      padding: 25px;
+      padding: 22px;
       border-radius: 8px;
     }
 
     .card h3 {
       font-family: 'Montserrat', sans-serif;
       color: var(--texto-claro);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 10px;
     }
 
-    .card p {
+    .card p, .depoimento-card p {
       color: var(--texto-suave);
       font-size: 0.92rem;
     }
 
-    /* --- PORTFÓLIO FIXO (GARANTE CARREGAMENTO) --- */
+    .depoimento-autor {
+      color: var(--cobre-destaque);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* PORTFÓLIO */
     .grid-portfolio {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -241,34 +239,6 @@
       font-weight: 600;
     }
 
-    /* --- DEPOIMENTOS (SEM ITÁLICO / LEITURA CLARA) --- */
-    .grid-depoimentos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .depoimento-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-card);
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .depoimento-card p {
-      color: var(--texto-claro);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .depoimento-autor {
-      color: var(--cobre-destaque);
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    /* --- BOTÃO FLUTUANTE WHATSAPP --- */
     .whatsapp-btn {
       position: fixed;
       bottom: 20px;
@@ -286,7 +256,6 @@
 
     .whatsapp-btn svg { width: 30px; height: 30px; fill: white; }
 
-    /* --- RODAPÉ --- */
     footer {
       background-color: #0D0C0C;
       text-align: center;
@@ -303,19 +272,12 @@
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- NAVEGAÇÃO -->
   <header>
     <div class="logo">7 <span>RAÍZES</span></div>
   </header>
 
-  <!-- CONTATO DIRETO -->
-  <div class="top-info">
-    <div>Fale Conosco: <a href="tel:11970200771">(11) 97020-0771</a></div>
-    <div>Instagram: <a href="https://instagram.com/aplicadora_sena_" target="_blank">@aplicadora_sena_</a></div>
-    <div>Atendimento: São Paulo e Região</div>
-  </div>
-
-  <!-- SEÇÃO PRINCIPAL (HERO) -->
+  <!-- 1º QUADRO: NOME, SLOGAN E BOTÕES DE AÇÃO -->
   <div class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -327,6 +289,13 @@
         <a href="#portfolio" class="btn btn-outline">Ver Trabalhos</a>
       </div>
     </div>
+  </div>
+
+  <!-- INFORMAÇÕES DE CONTATO E PARCERIA (LOGOS ABAIXO DO 1º QUADRO) -->
+  <div class="top-info">
+    <div>Fale Conosco: <a href="tel:11970200771">(11) 97020-0771</a></div>
+    <div>Instagram do Prestador Parceiro: <a href="https://instagram.com/aplicadora_sena_" target="_blank">@aplicadora_sena_</a></div>
+    <div>Atendimento: São Paulo e Região</div>
   </div>
 
   <!-- SERVIÇOS -->
@@ -355,7 +324,7 @@
     </div>
   </section>
 
-  <!-- PORTFÓLIO (IMAGENS DIRETAS PARA EVITAR ERRO DE CARREGAMENTO) -->
+  <!-- PORTFÓLIO DE FOTOS -->
   <section id="portfolio">
     <div class="section-title">
       <span>Portfólio</span>
@@ -363,15 +332,18 @@
     </div>
     <div class="grid-portfolio">
       <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="Restauração de Assoalho">
+        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto1.jpg) -->
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Restauração de Taco">
         <div class="portfolio-caption">Restauração de Taco Antigo - Jardins</div>
       </div>
       <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Aplicação de Verniz Acetinado">
+        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto2.jpg) -->
+        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="Aplicação de Verniz">
         <div class="portfolio-caption">Aplicação de Verniz Acetinado - Moema</div>
       </div>
       <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="Raspagem de Parquete">
+        <!-- PARA USAR SUAS FOTOS: Substitua a URL dentro do src pelo link da sua foto (ex: foto3.jpg) -->
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="Raspagem e Calafetação">
         <div class="portfolio-caption">Raspagem e Calafetação - Pinheiros</div>
       </div>
     </div>
@@ -401,12 +373,12 @@
 
   <!-- CTA FINAL -->
   <section style="text-align: center;">
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">Seu piso tem uma história.</h2>
-    <p style="color: var(--cobre-destaque); font-weight: 700; font-size: 1.2rem; margin-bottom: 20px;">Nós ajudamos a continuar ela.</p>
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.7rem; margin-bottom: 8px;">Seu piso tem uma história.</h2>
+    <p style="color: var(--cobre-destaque); font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;">Nós ajudamos a continuar ela.</p>
     <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20quero%20solicitar%20um%20or%C3%A7amento." class="btn btn-primary" style="display: inline-block; width: 100%; max-width: 300px;">Fale Conosco Agora</a>
   </section>
 
-  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
   <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20vim%20pelo%20site%20da%207%20Ra%C3%ADzes." class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32">
       <path d="M16 2a13 13 0 0 0-11.3 19.4L3 29l7.8-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.5c-.2-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4A3.8 3.8 0 0 0 8 12.3a6.6 6.6 0 0 0 1.4 3.5 15.2 15.2 0 0 0 5.8 5.1c2.4 1 2.9.8 3.4.8a2.9 2.9 0 0 0 1.9-1.3 2.4 2.4 0 0 0 .2-1.3c-.1-.2-.4-.3-.7-.5z"/>
