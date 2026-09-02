@@ -1,570 +1,423 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & Social Sharing -->
-    <title>7 Raízes | Restauração de Pisos Nobres e Tacos de Madeira</title>
-    <meta name="description" content="Especialistas em restauração de pisos de madeira, raspagem de tacos e assoalhos, calafetação com massa PU e aplicação de vernizes nobres em São Paulo e região. Solicite uma avaliação!">
-    <meta name="keywords" content="restauração de pisos, raspagem de taco, bona, calafetação, piso de madeira, assoalho, raspagem de piso, são paulo">
-    
-    <!-- Open Graph (Preview no WhatsApp e Redes Sociais) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="7 Raízes - Restauração de Pisos Nobres">
-    <meta property="og:description" content="Tradição e precisão para devolver a beleza natural do seu piso de madeira com acabamento impecável.">
-    <meta property="og:image" content="./20231119_172908.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Raízes - Restauração de Pisos Nobres</title>
+  
+  <!-- Fontes Modernas: Montserrat (Títulos) e Inter (Textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-dark: #0a0807;
-            --bg-card: #14100d;
-            --accent-brown: #c06d20;
-            --accent-hover: #e07d2e;
-            --accent-low: #3a2210;
-            --text-light: #f7f4f0;
-            --text-muted: #a69e9a;
-            --header-height: 80px;
-        }
+  <style>
+    /* --- VARIÁVEIS DE CORES E ILUMINAÇÃO --- */
+    :root {
+      --bg-escuro: #141312;         /* Fundo grafite profundo e aquecido */
+      --bg-card: #1E1C1A;           /* Cards iluminados com tom suave */
+      --border-card: #3D352E;       /* Borda sutil de contraste */
+      --texto-claro: #F5F5F7;       /* Branco nítido para leitura fácil */
+      --texto-suave: #D1D5DB;       /* Cinza claro para descrições */
+      --cobre-destaque: #E58A2B;    /* Cobre/Ouro elegante */
+      --cobre-hover: #C6721E;
+      --whatsapp: #25D366;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      font-style: normal !important; /* Remove itálico excessivo */
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      background-color: var(--bg-escuro);
+      color: var(--texto-claro);
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* --- CABEÇALHO --- */
+    header {
+      background: rgba(20, 19, 18, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        h1, h2, h3, .serif {
-            font-family: 'Playfair Display', serif;
-        }
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--texto-claro);
+      letter-spacing: 2px;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s;
-        }
+    .logo span { color: var(--cobre-destaque); }
 
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--header-height);
-            background: rgba(10, 8, 7, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(192, 109, 32, 0.2);
-        }
+    /* --- HERO / CAPA (PISO ILUMINADO) --- */
+    .hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
 
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
+    /* Overlay mais leve (45%) para mostrar a beleza da madeira ao fundo */
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(20, 19, 18, 0.50) 0%, rgba(20, 19, 18, 0.90) 100%);
+      z-index: 1;
+    }
 
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        nav a {
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-        }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
 
-        nav a:hover {
-            color: var(--accent-brown);
-        }
+    .hero .subtitulo {
+      color: var(--cobre-destaque);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
 
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: calc(var(--header-height) + 40px) 20px 60px;
-            background-image: linear-gradient(rgba(10, 8, 7, 0.82), rgba(10, 8, 7, 0.92)), 
-                              url('./20231119_172908.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+    .hero p {
+      color: var(--texto-suave);
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
 
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
+    /* --- BOTÕES --- */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
 
-        .hero-sub {
-            color: var(--accent-brown);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
+    .btn {
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      text-align: center;
+    }
 
-        .hero p {
-            max-width: 600px;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
+    .btn-primary {
+      background-color: var(--cobre-destaque);
+      color: #fff;
+    }
 
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .btn-outline {
+      border: 1px solid var(--cobre-destaque);
+      color: var(--texto-claro);
+    }
 
-        .btn {
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
+    /* --- CONTATO RÁPIDO --- */
+    .top-info {
+      background-color: #1A1816;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-card);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
 
-        .btn-primary {
-            background-color: var(--accent-brown);
-            color: #fff;
-        }
+    .top-info a {
+      color: var(--cobre-destaque);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
+    /* --- SEÇÕES EM GERAL --- */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-        .btn-outline {
-            border: 1px solid var(--accent-brown);
-            color: var(--text-light);
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .btn-outline:hover {
-            background-color: var(--accent-low);
-        }
+    .section-title span {
+      color: var(--cobre-destaque);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      display: block;
+    }
 
-        /* INFO BAR */
-        .info-bar {
-            background-color: var(--bg-card);
-            border-top: 1px solid rgba(192, 109, 32, 0.15);
-            border-bottom: 1px solid rgba(192, 109, 32, 0.15);
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            text-align: center;
-        }
+    .section-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      color: var(--texto-claro);
+      margin-top: 5px;
+    }
 
-        .info-item span {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--accent-brown);
-            letter-spacing: 1px;
-        }
+    /* --- CARDS DE SERVIÇOS --- */
+    .grid-servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        /* SEÇÃO DE SERVIÇOS */
-        .services-section {
-            padding: 80px 5%;
-            background-color: var(--bg-dark);
-            text-align: center;
-        }
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      padding: 25px;
+      border-radius: 8px;
+    }
 
-        .section-tag {
-            color: var(--accent-brown);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    .card h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--texto-claro);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 40px auto 0;
-        }
+    .card p {
+      color: var(--texto-suave);
+      font-size: 0.92rem;
+    }
 
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 30px 20px;
-            border-radius: 6px;
-            border: 1px solid rgba(192, 109, 32, 0.2);
-            text-align: left;
-            transition: transform 0.3s;
-        }
+    /* --- PORTFÓLIO FIXO (GARANTE CARREGAMENTO) --- */
+    .grid-portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-brown);
-        }
+    .portfolio-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      height: 220px;
+    }
 
-        .service-card h3 {
-            color: var(--text-light);
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+    .portfolio-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(20, 19, 18, 0.85);
+      padding: 10px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--texto-claro);
+      font-weight: 600;
+    }
 
-        /* GALERIA AUTOMÁTICA */
-        .portfolio-section {
-            padding: 80px 5%;
-            text-align: center;
-            background-color: #0d0a08;
-        }
+    /* --- DEPOIMENTOS (SEM ITÁLICO / LEITURA CLARA) --- */
+    .grid-depoimentos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        .portfolio-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+    .depoimento-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      padding: 20px;
+      border-radius: 8px;
+    }
 
-        .portfolio-section p {
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
+    .depoimento-card p {
+      color: var(--texto-claro);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
 
-        .grid-fotos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .depoimento-autor {
+      color: var(--cobre-destaque);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
 
-        .foto-container {
-            position: relative;
-            width: 100%;
-            padding-top: 80%;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid rgba(192, 109, 32, 0.25);
-            background-color: var(--bg-card);
-        }
+    /* --- BOTÃO FLUTUANTE WHATSAPP --- */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--whatsapp);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
 
-        .foto-img {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s ease;
-        }
+    .whatsapp-btn svg { width: 30px; height: 30px; fill: white; }
 
-        .foto-container:hover .foto-img {
-            transform: scale(1.06);
-        }
+    /* --- RODAPÉ --- */
+    footer {
+      background-color: #0D0C0C;
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border-card);
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+    }
 
-        .watermark {
-            position: absolute;
-            bottom: 10px;
-            right: 12px;
-            background: rgba(10, 8, 7, 0.85);
-            color: var(--accent-brown);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: lowercase;
-            pointer-events: auto;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(192, 109, 32, 0.4);
-            transition: 0.3s;
-        }
-
-        .watermark:hover {
-            color: #fff;
-            border-color: var(--accent-hover);
-            background: rgba(192, 109, 32, 0.9);
-        }
-
-        /* DEPOIMENTOS */
-        .testimonials-section {
-            padding: 80px 5%;
-            text-align: center;
-            background-color: var(--bg-dark);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 40px auto 0;
-        }
-
-        .testimonial-card {
-            background-color: var(--bg-card);
-            padding: 30px 20px;
-            border-radius: 6px;
-            border: 1px solid rgba(192, 109, 32, 0.15);
-            font-style: italic;
-            position: relative;
-        }
-
-        .testimonial-card p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .testimonial-author {
-            font-style: normal;
-            font-weight: 700;
-            color: var(--accent-brown);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* CTA SECTION */
-        .cta-section {
-            padding: 80px 5%;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
-            text-align: center;
-            border-top: 1px solid rgba(192, 109, 32, 0.15);
-        }
-
-        .cta-section h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin-bottom: 15px;
-        }
-
-        .cta-section p {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #050403;
-            padding: 40px 5% 20px;
-            border-top: 1px solid rgba(192, 109, 32, 0.1);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
-        /* WHATSAPP FLUTUANTE */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 55px;
-            height: 55px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 2000;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            nav { display: none; }
-            .hero-buttons { flex-direction: column; width: 100%; }
-            .btn { width: 100%; justify-content: center; }
-        }
-    </style>
+    @media (min-width: 600px) {
+      .btn-group { flex-direction: row; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="header-logo">
-            <span style="color: var(--accent-brown);">7</span> RAÍZES
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#trabalhos">Portfólio</a></li>
-                <li><a href="#depoimentos">Avaliações</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="logo">7 <span>RAÍZES</span></div>
+  </header>
 
-    <!-- HERO -->
-    <section id="inicio" class="hero">
-        <h1>7 RAÍZES</h1>
-        <div class="hero-sub">Restauração de Pisos Nobres</div>
-        <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira.</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20para%20restaura%C3%A7%C3%A3o%20de%20piso." class="btn btn-primary" target="_blank">Solicitar Avaliação</a>
-            <a href="#trabalhos" class="btn btn-outline">Ver Nossos Trabalhos</a>
-        </div>
-    </section>
+  <!-- CONTATO DIRETO -->
+  <div class="top-info">
+    <div>Fale Conosco: <a href="tel:11970200771">(11) 97020-0771</a></div>
+    <div>Instagram: <a href="https://instagram.com/aplicadora_sena_" target="_blank">@aplicadora_sena_</a></div>
+    <div>Atendimento: São Paulo e Região</div>
+  </div>
 
-    <!-- INFO BAR -->
-    <div class="info-bar">
-        <div class="info-item">
-            <span>Fale Conosco</span>
-            <strong>(11) 97020-0771</strong>
-        </div>
-        <div class="info-item">
-            <span>Execução & Parceria</span>
-            <strong><a href="https://www.instagram.com/aplicadora_sena_/" target="_blank" style="color: var(--text-light); text-decoration: underline;">@aplicadora_sena_</a></strong>
-        </div>
-        <div class="info-item">
-            <span>Atendimento</span>
-            <strong>São Paulo e Região</strong>
-        </div>
-        <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="btn btn-outline" target="_blank">Falar com Especialista</a>
+  <!-- SEÇÃO PRINCIPAL (HERO) -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="subtitulo">Restauração de Pisos Nobres</div>
+      <h1>7 RAÍZES</h1>
+      <p>Tradição, precisão e cuidado para devolver a beleza natural dos seus pisos de madeira.</p>
+      <div class="btn-group">
+        <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20para%20meu%20piso." class="btn btn-primary">Solicitar Avaliação</a>
+        <a href="#portfolio" class="btn btn-outline">Ver Trabalhos</a>
+      </div>
     </div>
+  </div>
 
-    <!-- SEÇÃO DE SERVIÇOS -->
-    <section id="servicos" class="services-section">
-        <span class="section-tag">Especialidades</span>
-        <h2>Nossos Serviços de Alto Padrão</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Técnicas consolidadas combinadas com acabamento artesanal para garantir a máxima durabilidade do seu assoalho.</p>
+  <!-- SERVIÇOS -->
+  <section>
+    <div class="section-title">
+      <span>Especialidades</span>
+      <h2>Nossos Serviços de Alto Padrão</h2>
+    </div>
+    <div class="grid-servicos">
+      <div class="card">
+        <h3>Raspagem e Lixamento Especializado</h3>
+        <p>Lixamento progressivo executado com maquinário profissional para remoção completa de vernizes antigos, riscos e nivelamento perfeito da madeira.</p>
+      </div>
+      <div class="card">
+        <h3>Calafetação & Juntas</h3>
+        <p>Preenchimento e vedação de frestas entre as tábuas utilizando massa PU flexível de alta resistência para prevenir trincas futuras.</p>
+      </div>
+      <div class="card">
+        <h3>Aplicação de Vernizes Nobres</h3>
+        <p>Proteção e vitrificação com vernizes de alta performance (como Bona e Skane), oferecendo opções de acabamento fosco, acetinado ou brilhante.</p>
+      </div>
+      <div class="card">
+        <h3>Restauração de Tacos e Assoalhos</h3>
+        <p>Recuperação técnica de tacos, parquetes e assoalhos de madeira nobre, devolvendo os tons quentes e a elegância original do piso.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Raspagem e Lixamento Especializado</h3>
-                <p>Lixamento progressivo executado com maquinário profissional para remoção completa de vernizes antigos, riscos e nivelamento perfeito da madeira.</p>
-            </div>
-            <div class="service-card">
-                <h3>Calafetação & Juntas</h3>
-                <p>Preenchimento e vedação de frestas entre as tábuas utilizando massa PU flexível de alta resistência que previne trincas e aberturas futuras.</p>
-            </div>
-            <div class="service-card">
-                <h3>Aplicação de Vernizes Nobres</h3>
-                <p>Proteção e vitrificação com vernizes de alta performance (como Bona e Skane), oferecendo opções de acabamento fosco, acetinado ou brilhante.</p>
-            </div>
-            <div class="service-card">
-                <h3>Restauração de Tacos e Assoalhos</h3>
-                <p>Recuperação técnica de tacos, parquetes e assoalhos de madeira nobre, devolvendo os tons quentes e a elegância original do piso.</p>
-            </div>
-        </div>
-    </section>
+  <!-- PORTFÓLIO (IMAGENS DIRETAS PARA EVITAR ERRO DE CARREGAMENTO) -->
+  <section id="portfolio">
+    <div class="section-title">
+      <span>Portfólio</span>
+      <h2>Projetos Realizados</h2>
+    </div>
+    <div class="grid-portfolio">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80" alt="Restauração de Assoalho">
+        <div class="portfolio-caption">Restauração de Taco Antigo - Jardins</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Aplicação de Verniz Acetinado">
+        <div class="portfolio-caption">Aplicação de Verniz Acetinado - Moema</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=600&q=80" alt="Raspagem de Parquete">
+        <div class="portfolio-caption">Raspagem e Calafetação - Pinheiros</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- GALERIA AUTOMÁTICA -->
-    <section id="trabalhos" class="portfolio-section">
-        <span class="section-tag">Portfólio</span>
-        <h2>Projetos Realizados</h2>
-        <p>Veja a qualidade dos acabamentos aplicados aos pisos dos nossos clientes.</p>
+  <!-- DEPOIMENTOS -->
+  <section>
+    <div class="section-title">
+      <span>Depoimentos</span>
+      <h2>O que dizem nossos clientes</h2>
+    </div>
+    <div class="grid-depoimentos">
+      <div class="depoimento-card">
+        <p>"O piso do meu apartamento de taco antigo ficou novo de novo! Agilidade no atendimento e um acabamento verdadeiramente impecável."</p>
+        <div class="depoimento-autor">— SÉRGIO A. (JARDINS, SP)</div>
+      </div>
+      <div class="depoimento-card">
+        <p>"Trabalho de extrema precisão. A calafetação ficou perfeita e o acabamento acetinado valorizou muito nossa sala."</p>
+        <div class="depoimento-autor">— CARLA M. (MOEMA, SP)</div>
+      </div>
+      <div class="depoimento-card">
+        <p>"Atendimento impecável desde o orçamento. Pontuais e o resultado final no assoalho de ipê superou as expectativas."</p>
+        <div class="depoimento-autor">— ROBERTO V. (PINHEIROS, SP)</div>
+      </div>
+    </div>
+  </section>
 
-        <div id="galeria-fotos" class="grid-fotos">
-            <p style="color: var(--text-muted); grid-column: 1/-1;">Carregando fotos do portfólio...</p>
-        </div>
-    </section>
+  <!-- CTA FINAL -->
+  <section style="text-align: center;">
+    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 10px;">Seu piso tem uma história.</h2>
+    <p style="color: var(--cobre-destaque); font-weight: 700; font-size: 1.2rem; margin-bottom: 20px;">Nós ajudamos a continuar ela.</p>
+    <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20quero%20solicitar%20um%20or%C3%A7amento." class="btn btn-primary" style="display: inline-block; width: 100%; max-width: 300px;">Fale Conosco Agora</a>
+  </section>
 
-    <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="testimonials-section">
-        <span class="section-tag">Depoimentos</span>
-        <h2>O que dizem nossos clientes</h2>
+  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5511970200771?text=Ol%C3%A1,%20vim%20pelo%20site%20da%207%20Ra%C3%ADzes." class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 2a13 13 0 0 0-11.3 19.4L3 29l7.8-2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.5c-.2-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4A3.8 3.8 0 0 0 8 12.3a6.6 6.6 0 0 0 1.4 3.5 15.2 15.2 0 0 0 5.8 5.1c2.4 1 2.9.8 3.4.8a2.9 2.9 0 0 0 1.9-1.3 2.4 2.4 0 0 0 .2-1.3c-.1-.2-.4-.3-.7-.5z"/>
+    </svg>
+  </a>
 
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p>"O piso do meu apartamento de taco antigo ficou novo de novo! Agilidade no atendimento e um acabamento verdadeiramente impecável."</p>
-                <div class="testimonial-author">— Sérgio A. (Jardins, SP)</div>
-            </div>
-            <div class="testimonial-card">
-                <p>"Trabalho de extrema precisão. A calafetação ficou perfeita e o acabamento acetinado valorizou muito nossa sala."</p>
-                <div class="testimonial-author">— Carla M. (Moema, SP)</div>
-            </div>
-            <div class="testimonial-card">
-                <p>"Atendimento impecável desde o orçamento. Pontuais e o resultado final no assoalho de ipê superou as expectativas."</p>
-                <div class="testimonial-author">— Roberto V. (Pinheiros, SP)</div>
-            </div>
-        </div>
-    </section>
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© 2026 7 Raízes - Restauração de Pisos Nobres. Todos os direitos reservados.</p>
+    <p>Contato: 7raizespisonobre@gmail.com | (11) 97020-0771</p>
+  </footer>
 
-    <!-- CTA -->
-    <section id="contato" class="cta-section">
-        <h2>Seu piso tem uma história.<br><span style="color: var(--accent-brown);">Nós ajudamos a continuar ela.</span></h2>
-        <p>Solicite uma avaliação e descubra o potencial do seu piso de madeira.</p>
-        <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">Fale Conosco Agora</a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 7 Raízes - Restauração de Pisos Nobres. Todos os direitos reservados.</p>
-        <p style="margin-top: 5px; font-size: 0.8rem; color: var(--text-muted);">Contato: 7raizespisonobre@gmail.com | (11) 97020-0771</p>
-    </footer>
-
-    <!-- BOTÃO FLUTUANTE WHATSAPP (SVG Oficial) -->
-    <a href="https://wa.me/5511970200771?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20servi%C3%A7o." class="whatsapp-btn" target="_blank" title="Contato via WhatsApp">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    </a>
-
-    <!-- SCRIPT DE BUSCA AUTOMÁTICA DO GITHUB (Corrigido) -->
-    <script>
-        async function carregarGaleriaGitHub() {
-            const usuario = '7raizespisonobre-code';
-            const repositorio = '7raizes-pisonobre';
-            const galeriaContainer = document.getElementById('galeria-fotos');
-
-            try {
-                const resposta = await fetch(`https://api.github.com/repos/${usuario}/${repositorio}/contents/`);
-                const arquivos = await resposta.json();
-
-                const fotos = arquivos.filter(arquivo => {
-                    const nome = arquivo.name.toLowerCase();
-                    const ehImagem = nome.match(/\.(jpg|jpeg|png|webp|heif)$/i);
-                    const ehCaptura = nome.includes('captura') || nome.includes('screenshot') || nome.startsWith('10002');
-                    return ehImagem && !ehCaptura;
-                });
-
-                if (fotos.length === 0) {
-                    galeriaContainer.innerHTML = '<p style="color: var(--text-muted); grid-column: 1/-1;">Nenhuma imagem encontrada.</p>';
-                    return;
-                }
-
-                galeriaContainer.innerHTML = '';
-
-                fotos.forEach(foto => {
-                    const card = document.createElement('div');
-                    card.className = 'foto-container';
-                    card.innerHTML = `
-                        <div class="foto-img" style="background-image: url('${foto.download_url}');"></div>
-                        <a href="https://www.instagram.com/aplicadora_sena_/" target="_blank" rel="noopener" class="watermark">
-                            execução: @aplicadora_sena_
-                        </a>
-                    `;
-                    galeriaContainer.a
+</body>
+</html>
